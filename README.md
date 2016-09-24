@@ -50,6 +50,7 @@ By default this plugin creates some CSS rules for displaying result messages to 
 This tool is still under development, but the main goal is reached for me. I think, there is much more potential to do with such a plugin and I would be glad to receive comments ideas and/or pull requests.
 
 I think, these features are worth to integrate in future:
+- Use the Grav Language framework for the messages.
 - Create a form for the users to manually subscribe. (At the moment, I use the form-plugin in Grav)
 - Add functionality to save and manage the e-mail address list
 - Provide a double opt-in procedure with e-mail verification.
