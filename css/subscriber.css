@@ -1,0 +1,8 @@
+.grav-plugin-subscriber {
+  border: 1px dotted black;
+  line-height: 1.5em;
+  font-weight: bold;
+  padding: 1em;
+  margin: 1em 0;
+}
+

@@ -1,0 +1,91 @@
+name: Subscriber
+version: 0.1.0
+description: 'Let users simply (un)subscribe to a newsletter with a single click.'
+icon: envelope-o
+author:
+  name: RobGnu
+  email: rob@gmx.de
+  url: https://github.com/robgnu/
+homepage: https://github.com/robgnu/grav-plugin-subscriber
+keywords: plugin, newsletter, subscribe, unsubscribe, singleclick
+bugs: https://github.com/robgnu/grav-plugin-subscriber/issues
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    built_in_css:
+      type: toggle
+      label: Use built in CSS for user output on the site.
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    email_from:
+      type: text
+      size: large
+      label: Sender e-mail address.
+      help: PLUGIN_ADMIN.DEFAULT_EMAIL_HELP
+      validate:
+          type: email
+
+    email_to:
+      type: text
+      size: large
+      label: Receiver e-mail address.
+      help: PLUGIN_ADMIN.DEFAULT_EMAIL_HELP
+      validate:
+          type: email
+
+    email_subject:
+      type: text
+      size: large
+      label: Subject of the e-mail notification.
+      default: 'example.com - email notification'
+
+    email_content:
+      type: text
+      size: large
+      label: Some text to add to the e-mail notification.
+      default: 'You receive this message to inform you about a (un)subscribe action on your website.'
+
+    msg_subscribe_thankyou:
+      type: text
+      size: large
+      label: Message for your users on a subscribe action.
+      default: 'Thank you. Your e-mail address has been added to our list.'
+
+    msg_unsubscribe_thankyou:
+      type: text
+      size: large
+      label: Message for your users on a unsubscribe action.
+      default: 'Thank you. Your e-mail address has been removed from our list.'
+
+    errormsg_noaction:
+      type: text
+      size: large
+      label: Error message displayed if data failed.
+      default: 'Error in submitted data. Action aborted.'
+
+    errormsg_nomail:
+      type: text
+      size: large
+      label: Error message displayed if e-mail is invalid.
+      default: 'The given e-mail address is invalid. Please send a correct address. Action aborted.'
+
+

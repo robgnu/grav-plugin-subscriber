@@ -1,0 +1,10 @@
+enabled: true
+built_in_css: true
+email_from: 'user@example.com'
+email_to: 'user@example.com'
+email_subject: 'example.com - email notification'
+email_content: 'You receive this message to inform you about a (un)subscribe action on your website.'
+msg_subscribe_thankyou: Thank you. Your e-mail address has been added to our list.
+msg_unsubscribe_thankyou: Thank you. Your e-mail address has been removed from our list.
+errormsg_data: Error in submitted data. Action aborted.
+errormsg_nomail: The given e-mail address is invalid. Please send a correct address. Action aborted.
