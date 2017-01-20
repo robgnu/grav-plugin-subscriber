@@ -8,7 +8,7 @@ class SubscriberPlugin extends Plugin
     protected $validActions = array("subscribe", "unsubscribe");
     protected $action = false;
     protected $email = false;
-    
+
     public static function getSubscribedEvents()
     {
         return [
@@ -40,7 +40,7 @@ class SubscriberPlugin extends Plugin
         }
     }
     /**
-     * 
+     *
      */
     public function onTwigExtensions()
     {
@@ -55,15 +55,15 @@ class SubscriberPlugin extends Plugin
             // e-mail sent succesfully -> display message to the user.
             switch ($this->action) {
               case "subscribe";
-                $outputMessage = $this->grav['config']->get('plugins.subscriber.msg_subscribe_thankyou');
+                $outputMessage = $this->grav['language']->translate('PLUGIN_SUBSCRIBER.MSG_SUBSCRIBE_THANKYOU');
               break;
               case "unsubscribe";
-                $outputMessage = $this->grav['config']->get('plugins.subscriber.msg_unsubscribe_thankyou');
+                $outputMessage = $this->grav['language']->translate('PLUGIN_SUBSCRIBER.MSG_UNSUBSCRIBE_THANKYOU');
               break;
             } // switch
           } else {
             // error while sending e-mail. -> display error to the user.
-            $outputMessage = $this->grav['config']->get('plugins.subscriber.errormsg_data');
+            $outputMessage = $this->grav['language']->translate('PLUGIN_SUBSCRIBER.MSG_ERROR_NOACTION');
           }
         }
         require_once(__DIR__ . '/twig/subscriber.twig.php');
@@ -120,7 +120,7 @@ class SubscriberPlugin extends Plugin
     /**
      * Checks the input vars
      * The return value is the error message or an empty string.
-     * 
+     *
      * @return string
      */
     protected function checkSubscriberParams() {
@@ -128,11 +128,11 @@ class SubscriberPlugin extends Plugin
       if (empty($this->getParams)) { return ""; }
       // Check action param
       if (!$this->action || !in_array($this->action, $this->validActions) ) {
-        return $this->grav['config']->get('plugins.subscriber.errormsg_data');
+        return $this->grav['language']->translate('PLUGIN_SUBSCRIBER.MSG_ERROR_NOACTION');
       }
       // Check e-mail address
       if (!$this->email) {
-        return $this->grav['config']->get('plugins.subscriber.errormsg_nomail');
+        return $this->grav['language']->translate('PLUGIN_SUBSCRIBER.MSG_ERROR_NOMAIL');
       }
       return "";
     }
@@ -142,12 +142,16 @@ class SubscriberPlugin extends Plugin
      * Sends email notification to the configured address.
      */
     protected function sendEmailNotification() {
-      $subject  = $this->grav['config']->get('plugins.subscriber.email_subject');
-      $content  = "<p>".$this->grav['config']->get('plugins.subscriber.email_content')."</p>";
+      // Create the subject
+      $subject  = $this->grav['language']->translate('PLUGIN_SUBSCRIBER.EMAIL_SUBJECT');
+      // Create the content
+      $content  = "<p>".$this->grav['language']->translate('PLUGIN_SUBSCRIBER.EMAIL_CONTENT_TEASER')."</p>";
       $content .= "<p>";
-      $content .= "<b>action:</b> ".$this->action;
+      $content .= "<b>".$this->grav['language']->translate('PLUGIN_SUBSCRIBER.EMAIL_CONTENT_SITE').":</b> ".$this->grav['config']->get('site.title');
       $content .= "<br/>";
-      $content .= "<b>email address:</b> ".$this->email;
+      $content .= "<b>".$this->grav['language']->translate('PLUGIN_SUBSCRIBER.EMAIL_CONTENT_ACTION').":</b> ".$this->action;
+      $content .= "<br/>";
+      $content .= "<b>".$this->grav['language']->translate('PLUGIN_SUBSCRIBER.EMAIL_CONTENT_ADDRESS').":</b> ".$this->email;
       $content .= "</p>";
       $message  = $this->grav['Email']->message($subject, $content, 'text/html')
             ->setFrom($this->grav['config']->get('plugins.subscriber.email_from'))

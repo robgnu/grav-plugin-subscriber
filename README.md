@@ -11,8 +11,9 @@ The main reason for developing this plugin was the situation that our website is
 
 * Provide a link in your newsletters to (un)subscribe to/from the list.
 * You'll receive an e-mail notification about the action. (Email plugin required!)
-* All messages and notifications are configurable in the plugin settings.
+* All messages and notifications are configurable.
 * Place the user message at every place on your website.
+* Supported translations: en, de
 
 ## Setup
 
@@ -31,6 +32,7 @@ cache_enable: false
 * Edit the page content and set this code at your preferred position:
  `{{ subscriber() }}`
 * Visit your Page and you will note, that nothing new happens. That's correct. Now it's needed to add some parameters to your URL to test the plugin.
+* Enable translation support in your GRAV site. [see the GRAV Documentation how to do this](https://learn.getgrav.org/content/multi-language#single-language-different-than-english)
 * There are two parameters you have to set to start working.
  * **action** defines the task. The value can be **subscribe** or **unsubscribe**
  * **email** ist the e-mail address to (un)subscribe.
@@ -41,6 +43,10 @@ https://www.example.com/newsletter?action=unsubscribe&email=user@example.com
 * The user will receive a message which confirms the action (change the text to your needs in the plugin-config) and you'll get an e-mail with the submitted data.
 * When you send a newsletter to your clients/users/customers, you can provide a link to let the user simply click on that link to unsubscribe.
 
+### Custom messages and notifications
+
+You can change all strings to your needs. Simply open the **languages.yaml**, find your language and change the strings to your needs. If you can't find your language I would apreciate your help in translation.
+
 ### Custom CSS styles
 
 By default this plugin creates some CSS rules for displaying result messages to the user. You can disable this in the plugin settings and create your own CSS styles.
@@ -50,7 +56,6 @@ By default this plugin creates some CSS rules for displaying result messages to 
 This tool is still under development, but the main goal is reached for me. I think, there is much more potential to do with such a plugin and I would be glad to receive comments ideas and/or pull requests.
 
 I think, these features are worth to integrate in future:
-- Use the Grav Language framework for the messages.
 - Create a form for the users to manually subscribe. (At the moment, I use the form-plugin in Grav)
 - Add functionality to save and manage the e-mail address list
 - Provide a double opt-in procedure with e-mail verification.

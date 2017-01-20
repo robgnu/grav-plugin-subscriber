@@ -1,0 +1,23 @@
+en:
+  PLUGIN_SUBSCRIBER:
+    EMAIL_SUBJECT: "[subscriber] - email notification"
+    EMAIL_CONTENT_TEASER: "You receive this message to inform you about a (un)subscribe action on your website."
+    EMAIL_CONTENT_SITE: "Website"
+    EMAIL_CONTENT_ACTION: "Action"
+    EMAIL_CONTENT_ADDRESS: "email address"
+    MSG_SUBSCRIBE_THANKYOU: "Thank you. Your e-mail address has been added to our list."
+    MSG_UNSUBSCRIBE_THANKYOU: "Thank you. Your e-mail address has been removed from our list."
+    MSG_ERROR_NOACTION: "Error in submitted data. Action aborted."
+    MSG_ERROR_NOMAIL: "The given e-mail address is invalid. Please send a correct address. Action aborted."
+
+de:
+  PLUGIN_SUBSCRIBER:
+    EMAIL_SUBJECT: "[subscriber] - E-Mail Benachrichtigung"
+    EMAIL_CONTENT_TEASER: "Sie erhalten diese Nachricht, da auf Ihrer Webseite eine An-/Abmeldung durchgeführt wurde."
+    EMAIL_CONTENT_SITE: "Webseite"
+    EMAIL_CONTENT_ACTION: "Aktion"
+    EMAIL_CONTENT_ADDRESS: "E-Mail Adresse"
+    MSG_SUBSCRIBE_THANKYOU: "Vielen Dank. Ihre E-Mail Adresse wurde in unseren Verteiler aufgenommen."
+    MSG_UNSUBSCRIBE_THANKYOU: "Vielen Dank. Wir haben Ihre E-Mail Adresse aus unserem Verteiler entfernt."
+    MSG_ERROR_NOACTION: "Fehler in den übermittelten Daten. Vorgang wurde abgebrochen."
+    MSG_ERROR_NOMAIL: "Die angegebene E-Mail Adresse ist ungültig. Vorgang wurde abgebrochen."
