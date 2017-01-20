@@ -21,3 +21,15 @@ de:
     MSG_UNSUBSCRIBE_THANKYOU: "Vielen Dank. Wir haben Ihre E-Mail Adresse aus unserem Verteiler entfernt."
     MSG_ERROR_NOACTION: "Fehler in den übermittelten Daten. Vorgang wurde abgebrochen."
     MSG_ERROR_NOMAIL: "Die angegebene E-Mail Adresse ist ungültig. Vorgang wurde abgebrochen."
+    
+fr:
+  PLUGIN_SUBSCRIBER:
+    EMAIL_SUBJECT: "[subscriber] - notification par e-mail"
+    EMAIL_CONTENT_TEASER: "Vous recevez ce message afin de vous informer d’une action d’abonnement de désabonnement sur votre site Web."
+    EMAIL_CONTENT_SITE: "Site Web"
+    EMAIL_CONTENT_ACTION: "Action"
+    EMAIL_CONTENT_ADDRESS: "Adresse e-mail"
+    MSG_SUBSCRIBE_THANKYOU: "Merci. Votre adresse e-mail a été ajoutée à notre liste."
+    MSG_UNSUBSCRIBE_THANKYOU: "Merci. Votre adresse e-mail a été supprimée de notre liste.."
+    MSG_ERROR_NOACTION: "Erreur lors de la soumission de données. Action annulée."
+    MSG_ERROR_NOMAIL: "L’adresse e-mail n’est pas valide. Veuillez soumettre une adresse valide. Action abandonnée."
