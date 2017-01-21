@@ -1,3 +1,9 @@
+# v0.2.2
+##  01/21/2017
+
+1. [](#improved)
+    * Added french (fr) language by @MATsxm.
+
 # v0.2.1
 ##  01/21/2017
 
