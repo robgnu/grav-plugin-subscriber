@@ -4,7 +4,7 @@ The **Subscriber** Plugin is for [Grav CMS](http://github.com/getgrav/grav).
 
 ## Description
 
-This plugin offers a simple way to (un)subscribe users to/from a list or a newsletter. But this plugins doesn't handle the list itself. You, the admin or a defined e-mail address will receive a notification to manually add/remove the address to/from the list.
+This plugin offers a simple way to (un)subscribe users to/from a list or a newsletter. But this plugin doesn't handle the list itself. You, the admin or a defined e-mail address will receive a notification to manually add/remove the address to/from the list.
 The main reason for developing this plugin was the situation that our website is seperated from our newsletter-tool. But we want to offer our users a simple way to unsubscribe from the newsletter with a single click. (In some countrys this is a legal requirement.) This tool provides subscribing as well.
 
 ## Features
@@ -40,16 +40,25 @@ cache_enable: false
 ```
 https://www.example.com/newsletter?action=unsubscribe&email=user@example.com
 ```
-* The user will receive a message which confirms the action (change the text to your needs in the plugin-config) and you'll get an e-mail with the submitted data.
+* The user will receive a message on the webpage which confirms the action and you'll get an e-mail with the submitted data.
 * When you send a newsletter to your clients/users/customers, you can provide a link to let the user simply click on that link to unsubscribe.
 
 ### Custom messages and notifications
 
-You can change all strings to your needs. Simply open the **languages.yaml**, find your language and change the strings to your needs. If you can't find your language I would apreciate your help in translation.
+If you don't like the standard messages, you can change them to your needs. You can do that by copying the `user/plugins/subscriber/languages.yaml` file into `user/config/plugins/subscriber/languages.yaml` and make your changes there. If you can't find your language I would apreciate your help in translation. Just send me a push requests.
 
 ### Custom CSS styles
 
-By default this plugin creates some CSS rules for displaying result messages to the user. You can disable this in the plugin settings and create your own CSS styles.
+By default this plugin creates some CSS rules for displaying result messages to the user. You can disable this in the plugin settings and create your own CSS styles in your template. This example is pretty self explanatory.
+```
+.grav-plugin-subscriber {
+  border: 1px dotted black;
+  line-height: 1.5em;
+  font-weight: bold;
+  padding: 1em;
+  margin: 1em 0;
+}
+```
 
 ## ToDo
 
