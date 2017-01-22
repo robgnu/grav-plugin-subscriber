@@ -1,3 +1,9 @@
+# v1.0.0
+##  01/22/2017
+
+1. [](#improved)
+    * Removed some temporary code to optimize the parsing of $_GET parameters. This plugin was affected by [nginx config bug](https://github.com/getgrav/grav/issues/1245). This is solved now.
+
 # v0.2.2
 ##  01/21/2017
 
