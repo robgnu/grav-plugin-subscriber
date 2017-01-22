@@ -44,7 +44,7 @@ class SubscriberPlugin extends Plugin
      */
     public function onTwigExtensions()
     {
-        $this->getParams = $this->getGetParams(); // Save GET Params
+        $this->getParams = $_GET; // Save GET Params
         // Validate GET-Parameters
         $this->validateSubscriberParams();
         // Check values for errors -> returns an empty string or an error message.
@@ -72,39 +72,7 @@ class SubscriberPlugin extends Plugin
 
 
     /**
-     * This function converts the $_SERVER['REQUEST_URI']
-     * to an array like the super global $_GET.
-     *
-     * The needed $_GET super global variable is empty in
-     * this plugin and I can't find a reason for that. If
-     * anyone knows why please contact me or send me a
-     * pull request.
-     *
-     * So, for now we do the parsing manually for ourself
-     * to get the needed values.
-     *
-     * @return array
-     */
-    protected function getGetParams() {
-      // Check for parameters
-      if (!isset($_SERVER['REQUEST_URI']) || !strpos($_SERVER['REQUEST_URI'], "?")) {
-        return array();
-      }
-      $temp = explode("?", $_SERVER['REQUEST_URI']); // Divide String at ?
-      $params = $temp[1]; // Save only the parameters
-      unset($temp);
-      foreach (explode("&", $params) as $chunk) {
-        $param = explode("=", $chunk);
-        if ($param) {
-          $outputArray[urldecode($param[0])] = trim(urldecode($param[1]));
-        }
-      }
-      return $outputArray;
-    }
-
-
-    /**
-     * Gets the input vars
+     * Validates and saves the input params
      */
     protected function validateSubscriberParams() {
       if (isset($this->getParams['action']) && !empty($this->getParams['action'])) {
@@ -118,14 +86,14 @@ class SubscriberPlugin extends Plugin
 
 
     /**
-     * Checks the input vars
+     * Checks the input params
      * The return value is the error message or an empty string.
      *
      * @return string
      */
     protected function checkSubscriberParams() {
       // No parameters -> no output to the user
-      if (empty($this->getParams)) { return ""; }
+      if (!$this->action && !$this->email) { return ""; }
       // Check action param
       if (!$this->action || !in_array($this->action, $this->validActions) ) {
         return $this->grav['language']->translate('PLUGIN_SUBSCRIBER.MSG_ERROR_NOACTION');
@@ -153,6 +121,7 @@ class SubscriberPlugin extends Plugin
       $content .= "<br/>";
       $content .= "<b>".$this->grav['language']->translate('PLUGIN_SUBSCRIBER.EMAIL_CONTENT_ADDRESS').":</b> ".$this->email;
       $content .= "</p>";
+      // DEBUG-Code: $content .= "<p>".print_r($_GET, true)."</p>";
       $message  = $this->grav['Email']->message($subject, $content, 'text/html')
             ->setFrom($this->grav['config']->get('plugins.subscriber.email_from'))
             ->setTo($this->grav['config']->get('plugins.subscriber.email_to'));
