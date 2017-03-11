@@ -20,7 +20,7 @@ The main reason for developing this plugin was the situation that our website is
 * Install the plugin to `/your/site/grav/user/plugins/`
 * Navigate to the plugin-settings in your Admin-Panel and enable Subscriber.
 * Check the settings and enter your sender and receiver e-mail address.
-* Navigate to your page where you want do process the messages. (e.g. `/user/pages/newsletter/default.md`)
+* Navigate to the page where you want to process the messages. (e.g. `/user/pages/newsletter/default.md`)
 * Edit the frontmatter of your page and set these options:
 ```
 title: 'This is my page title'
