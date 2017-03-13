@@ -33,3 +33,15 @@ fr:
     MSG_UNSUBSCRIBE_THANKYOU: "Merci. Votre adresse e-mail a été supprimée de notre liste."
     MSG_ERROR_NOACTION: "Erreur lors de la soumission de données. Action annulée."
     MSG_ERROR_NOMAIL: "L’adresse e-mail n’est pas valide. Veuillez soumettre une adresse valide. Action abandonnée."
+
+es:
+  PLUGIN_SUBSCRIBER:
+    EMAIL_SUBJECT: "[subscripción] - email de notificación"
+    EMAIL_CONTENT_TEASER: "Este email es para informarte de una acción de alta o baja en tu sitio web."
+    EMAIL_CONTENT_SITE: "Sitio Web"
+    EMAIL_CONTENT_ACTION: "Acción"
+    EMAIL_CONTENT_ADDRESS: "Dirección de e-mail"
+    MSG_SUBSCRIBE_THANKYOU: "Gracias por tu interés en nosotros. Tu email ha sido añadido a nuestra lista."
+    MSG_UNSUBSCRIBE_THANKYOU: "Gracias por tu compañía, lamentamos que te vayas. Hemos dado de baja tu email de nuestra lista."
+    MSG_ERROR_NOACTION: "Hemos encontrado un error recibiendo la información y hemos anulado la acción."
+    MSG_ERROR_NOMAIL: "La dirección de email no es válida. Por favor revísala e inténtalo de nuevo. Hemos anulado la acción."

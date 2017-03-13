@@ -13,7 +13,7 @@ The main reason for developing this plugin was the situation that our website is
 * You'll receive an e-mail notification about the action. (Email plugin required!)
 * All messages and notifications are configurable.
 * Place the user message at every place on your website.
-* Supported translations: en, de, fr
+* Supported translations: en, de, fr, es
 
 ## Setup
 
