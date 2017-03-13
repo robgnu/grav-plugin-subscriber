@@ -1,3 +1,9 @@
+# v1.0.1
+##  03/13/2017
+
+1. [](#improved)
+    * Added spanish (es) language by @joebordes - Thanks!
+
 # v1.0.0
 ##  01/22/2017
 
