@@ -1,7 +1,7 @@
 ---
-title: Comments
+title: Subscribe
 
 access:
-    admin.comments: true
+    admin.subscribe: true
     admin.super: true
 ---
