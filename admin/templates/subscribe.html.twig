@@ -1,0 +1,70 @@
+{% extends 'partials/base.html.twig' %}
+
+{% if admin.route %}
+    {% set context = admin.page(true) %}
+{% endif %}
+
+{% block titlebar %}
+    <h1><i class="fa fa-fw fa-file-text-o"></i> {{ "PLUGIN_SUBSCRIBER.LIST"|tu }}</h1>
+{% endblock %}
+
+{% block content %}
+    <style>
+        td.comments-actions {
+            flex: 0.1;
+        }
+
+        .pages-list .row {
+            padding-right: 1rem;
+        }
+
+        .comment-text {
+            line-height: 1.5rem;
+            display: inline-block;
+        }
+
+        .pages-list .row p.page-route {
+            margin: 0px 0 10px 0px;
+        }
+
+        th { background: #d9d9d9; }
+
+        .comment { flex: 3 }
+        .details { flex: 1.5 }
+
+        .center {
+            margin: 0 auto;
+            text-align: center;
+            display: block;
+        }
+
+        .button:active { margin: 0 auto;}
+    </style>
+
+    <h1>Mails dans les mailings lists</h1>
+
+    <div class="admin-block">
+        <table>
+            <tbody class="js__comments-container">
+                <tr class="h">
+                    <th class="mailing">mailing</th>
+                    <th class="mail">Mail</th>
+                    <th class="data">Date</th>
+                </tr>
+                {% for mailing in grav.twig.mailing %}
+                  {% for subscriber in mailing.subscribers %}
+                    <tr>
+                        <td class="mailing">{{mailing.mailing}}</td>
+                        <td class="mail">{{subscriber.email}}</td>
+                        <td class="date">{{subscriber.date}}</td>
+                    </tr>
+                  {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}
+
+
