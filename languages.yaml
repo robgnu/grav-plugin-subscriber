@@ -1,5 +1,6 @@
 en:
   PLUGIN_SUBSCRIBER:
+    LIST: "Mailing list"
     EMAIL_SUBJECT: "[subscriber] - email notification"
     EMAIL_CONTENT_TEASER: "You receive this message to inform you about a (un)subscribe action on your website."
     EMAIL_CONTENT_SITE: "Website"
@@ -24,6 +25,7 @@ de:
 
 fr:
   PLUGIN_SUBSCRIBER:
+    LIST: "Liste de mails"
     EMAIL_SUBJECT: "[subscriber] - notification par e-mail"
     EMAIL_CONTENT_TEASER: "Vous recevez ce message afin de vous informer d’une action d’abonnement de désabonnement sur votre site Web."
     EMAIL_CONTENT_SITE: "Site Web"
